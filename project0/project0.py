@@ -7,14 +7,16 @@
 # 56628532
 
 def square(n):
-    if n == 0: return
+    output = ''
+    if n == 0: return output
     
-    print("+-+")
-    print("| |")
+    output += "+-+" + '\n'
+    output += "| |" + '\n'
     for i in range(n-1):
-        print(i*'  ' + "+-+-+")
-        print((i+1)*'  ' + "| |")
-    print((n-1)*'  ' + "+-+")
+        output += i*'  ' + "+-+-+" + '\n'
+        output += (i+1)*'  ' + "| |" + '\n'
+    output += (n-1)*'  ' + "+-+" + '\n'
+    return output
 
 def main():
     n = int(input())
