@@ -6,7 +6,7 @@ def write_notes(to_write, file_path):
         f.write(to_write + "\n\n")
 
 def start_notes():
-    path = Path("pynote.txt")
+    path = Path.cwd() / "pynote.txt"
     welcome_message = ''
     
     if path.is_file() and path.exists():
