@@ -68,6 +68,7 @@ def ls(options, command_input, options_input):
     if len(exclusive_options) > 1:
         return "ERROR: Invalid Format.\n"
     if len(exclusive_options) == 1 and len(options_input) == 0:
+        print(options_input)
         return "ERROR: Invalid Format.\n"
     
     
@@ -79,20 +80,17 @@ def ls(options, command_input, options_input):
     p = Path(command_input)
     output = ""
     
-    if p.exists() and p.is_dir():
-        items = list(p.iterdir())
-    else:
-        return "ERROR: Invalid Pathcat .\n"
+    items = list(p.iterdir())
     
     
     if exclusive_option == '':
         files = [item for item in items if item.is_file()]
         
     elif exclusive_option == 's':
-        files = [item for item in items if item.is_file() and options_input in item.name]
+        files = [item for item in items if item.is_file() and item.name == options_input]
     
     elif exclusive_option == 'e':
-        files = [item for item in items if item.is_file() and any(options_input in suffix for suffix in item.suffixes)]
+        files = [item for item in items if item.is_file() and options_input in item.suffixes]
     
     elif exclusive_option == 'g':
         if options_input.isdigit():
@@ -197,9 +195,6 @@ def parse_command(user_input):
                     options_input = user_input_split[3]
             else:
                 command_input = user_input_split[1]
-                if len(user_input_split) > 2:
-                    return "ERROR: Invalid Format.\n"
-                    
     except:
         return "ERROR: Invalid Format.\n"
         
