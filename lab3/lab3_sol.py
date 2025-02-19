@@ -1,9 +1,6 @@
 import unittest
-
-from gradescope_utils.autograder_utils.decorators import weight, visibility, hide_errors
-
 try:
-    from solution import visualize_tree, find_acorns
+    from lab3 import visualize_tree, find_acorns
 except Exception as e:
     raise Exception(f'Couldnt import your class Basics from "solution.py", remember to work off of the template. The error is {e}')
 
@@ -143,8 +140,7 @@ class TestBasics(unittest.TestCase):
     def setUp(self):
         pass
     
-    # @hide_errors("A hidden test case has failed! )")
-    @weight(2)
+    # #hide_errors("A hidden test case has failed! )")
     def test_case1(self):
         # random.seed(32)
  
@@ -160,7 +156,6 @@ class TestBasics(unittest.TestCase):
         # self.assertEqual(out, ans)
         self.assertTrue(soln.strip() == submission.strip())
     
-    @weight(2)
     def test_case2(self):
         # random.seed(32)  
         tree = tree_builder_with_root()
@@ -177,7 +172,6 @@ class TestBasics(unittest.TestCase):
         for elem in soln:
             self.assertTrue(elem in submission)
 
-    @weight(2)
     def test_case3(self):
         # random.seed(1)
         tree = tree_builder_with_root()
@@ -194,7 +188,6 @@ class TestBasics(unittest.TestCase):
         # self.assertEqual(out, ans)
         self.assertTrue(soln.strip(' ').strip('\n') == submission.strip(' ').strip('\n'))
 
-    @weight(1)
     def test_case4(self):
         random.seed(1)
         tree = tree_builder_with_root()
@@ -211,7 +204,6 @@ class TestBasics(unittest.TestCase):
         # self.assertEqual(out, ans)
         self.assertTrue(soln.strip() == submission.strip())
     
-    @weight(1)
     def test_case5(self):
         random.seed(1)
         tree = tree_builder_with_root()
@@ -229,7 +221,6 @@ class TestBasics(unittest.TestCase):
         for elem in submission:
             self.assertTrue(elem in soln)
 
-    @weight(1)
     def test_case6(self):
         # random.seed(1)
         tree = tree_builder_with_root()
@@ -243,7 +234,6 @@ class TestBasics(unittest.TestCase):
       
         self.assertTrue(submission == [])
 
-    @weight(1)
     def test_case7(self):
         random.seed(1)
         tree = tree_builder_with_root()
@@ -263,64 +253,8 @@ class TestBasics(unittest.TestCase):
         self.assertTrue(len(soln) == len(submission))
         # self.assertTrue(soln.strip() == submission.strip())
 
-    # # @hide_errors("A hidden test case has failed! (core functionality)")
-    # @weight(1)
-    # def test_case2(self):
-    #     msg, running = pycalc('3','2',"x", "pycalc.txt")
-    #     ans = "3 x 2 = 6"
-    #     print(f"your submission output: {msg}")
-    #     print(f"correct answer: {ans}")
-    #     self.assertTrue(ans.strip() in msg.strip())
-
-    # @weight(1)
-    # def test_case3(self):
-    #     msg, running = pycalc('5','4',"*", "pycalc.txt")
-    #     ans = "Invalid operator! Please use one of the following: +, -, x, /, or q."
-    #     print(f"your submission output: {msg}")
-    #     print(f"correct answer: {ans}")
-    #     self.assertTrue(ans.strip() in msg.strip())
-
-    # @hide_errors("A hidden test case has failed! (ZeroDivisionError handling)")
-    # @weight(2)
-    # def test_case4(self):
-    #     msg, running = pycalc('5','0',"/", "pycalc.txt")
-    #     ans = "ZeroDivisionError"
-    #     # print(f"msg: {msg}")
-    #     # print(f"ans: {ans}")
-    #     # self.assertEqual(out, ans)
-    #     self.assertTrue(ans.strip() in msg.strip())
-
-    # @hide_errors("A hidden test case has failed! (ValueError handling)")
-    # @weight(2)
-    # def test_case5(self):
-    #     msg, running = pycalc('5.0','2',"/", "pycalc.txt")
-    #     ans = "ValueError"
-    #     self.assertTrue(ans.strip() in msg.strip())
-
-    # @hide_errors("A hidden test case has failed! (Incorrect output in txt file)")
-    # @weight(1)
-    # def test_case6(self):
-    #     soln_path = Path("answer.txt")
-    #     answer_path = Path("pycalc.txt")
-    #     soln_file = soln_path.open('r')
-    #     answer_file = answer_path.open('r')
-
-    #     soln = soln_file.read()
-    #     answer = answer_file.read()
-    #     self.assertTrue(soln.strip() == answer.strip())
-    #     soln_file.close()
-    #     answer_file.close()
-
-    # @hide_errors("A hidden test case has failed! (IOError handling)")
-    # @weight(2)
-    # def test_case7(self):
-    #     msg, running = pycalc("5","4","/","")
-    #     ans = "5 / 4 = 1.25\nIOError"
-    #     # print(f"msg: {msg}")
-    #     # print(f"ans: {ans}")
-    #     self.assertTrue(ans.strip() in msg.strip())
-    # # @hide_errors("A hidden test case has failed! (edge case)")
-
+    # #hide_errors("A hidden test case has failed! (core functionality)")
+    
 
 if __name__ == '__main__':
     unittest.main()

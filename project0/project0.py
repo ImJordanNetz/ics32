@@ -3,7 +3,7 @@
 # Starter code for project 0 in ICS 32 Programming with Software Libraries in Python
 
 # Jordan Netz
-# jnetz@uci.edu
+# jnetz#uci.edu
 # 56628532
 
 def square(n):

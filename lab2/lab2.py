@@ -3,7 +3,7 @@
 # Starter code for lab 2 in ICS 32 Programming with Software Libraries in Python
 
 # Jordan
-# jnetz@uci.edu
+# jnetz#uci.edu
 # 56628532
 
 from pathlib import Path

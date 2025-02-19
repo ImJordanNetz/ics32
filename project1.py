@@ -4,7 +4,7 @@
 # Project #1: File System Explorer
 # 
 # NAME: Jordan Netz
-# EMAIL: jnetz@uci.edu
+# EMAIL: jnetz#uci.edu
 # STUDENT ID: 56628532
 #
 # High-level Design:
@@ -120,6 +120,8 @@ def ls(options, command_input, options_input):
     for directory in directories:
         if len(exclusive_option) == 0 and "f" not in options:
             output += str(directory) + '\n'
+            
+    
     
     for directory in directories:
         if 'r' in options:
